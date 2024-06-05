@@ -7,9 +7,6 @@ class Userinfor extends React.Component{
         age: 23
     };
 
-
-
-
 handleOnChangeInput = (event) => {
     this.setState({
         name: event.target.value
@@ -53,6 +50,7 @@ handleOnSubmit = (event) => {
         )
     }
 }
+
 
 
 

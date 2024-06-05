@@ -5,30 +5,16 @@ import DisplayInfor from "./DisplayInfor";
 class MyComponent extends React.Component{
 
 
+
+
     state ={
-        name: 'Tien',
-        address : "Thai binh ",
-        age: 23
-    };
+        listUsers:[
+            {id: 1, name :"tien",age: "26"},
+            {id: 2, name :"hung",age: "26"},
+            {id: 3, name :"tien",age: "26"},
 
-
-
-
-handleOnChangeInput = (event) => {
-    this.setState({
-        name: event.target.value
-    })
-}
-
-handleOnChangeAge = (event) => {
-    this.setState({
-        age: event.target.value
-    })
-}
-handleOnSubmit = (event) => {
-    event.preventDefault()
-    console.log(this.state)
-}
+        ]
+    }
 
     //JSX
     render(){
@@ -37,10 +23,11 @@ handleOnSubmit = (event) => {
  
             <Userinfor></Userinfor>
             <br /> <br />
-            <DisplayInfor name= "Hoang" age ="25" ></DisplayInfor>
-            <hr />
-            <DisplayInfor name= "hung" age ="23" ></DisplayInfor>
-
+            <DisplayInfor 
+            listUsers = {this.state.listUsers}
+            
+            
+            ></DisplayInfor>
 
              </div>
     );
