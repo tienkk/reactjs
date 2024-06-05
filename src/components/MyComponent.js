@@ -1,6 +1,6 @@
 import React from "react";
-import Userinfor from "./Userinfor";
 import DisplayInfor from "./DisplayInfor";
+import AddUserinfor from "./AddUserinfor";
 
 class MyComponent extends React.Component{
 
@@ -16,20 +16,36 @@ class MyComponent extends React.Component{
         ]
     }
 
+    handleAddNewUser = (useObj) => {
+        // let listUsersClone = [...this.state.listUsers]
+        // listUsersClone.unshift(useObj)
+        // listUsersClone.push(useObj)
+        // this.state({
+        //     listUsers : listUsersClone
+        // })
+
+        console.log("check data ",useObj)
+        this.setState({
+            listUsers:[useObj,...this.state.listUsers]
+        })
+    }
+
     //JSX
     render(){
     return(
         <div>
- 
-            <Userinfor></Userinfor>
+            <AddUserinfor
+                handleAddNewUser = {this.handleAddNewUser}
+            ></AddUserinfor>
             <br /> <br />
             <DisplayInfor 
             listUsers = {this.state.listUsers}
+            handleAddNewUser = {this.handleAddNewUser}
             
             
             ></DisplayInfor>
 
-             </div>
+            </div>
     );
     }
 }

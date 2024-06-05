@@ -1,10 +1,10 @@
 import React from "react";
 
-class Userinfor extends React.Component{
+class AddUserinfor extends React.Component{
     state ={
-        name: 'Tien',
+        name: '',
         address : "Thai binh ",
-        age: 23
+        age: ''
     };
 
 handleOnChangeInput = (event) => {
@@ -20,7 +20,11 @@ handleOnChangeAge = (event) => {
 }
 handleOnSubmit = (event) => {
     event.preventDefault()
-    console.log(this.state)
+    this.props.handleAddNewUser({
+        id: Math.floor((Math.random() * 100)+1) + "random",
+        name: this.state.name,
+        age: this.state.age
+    });
 }
 
     render(){
@@ -33,9 +37,6 @@ handleOnSubmit = (event) => {
                 value={this.state.name}
                 onChange={(event) => {this.handleOnChangeInput(event)}}
                 />
-                <button>
-                    Submit
-                </button>
 
                 <label htmlFor="">Your age: </label>
                 <input type="text" 
@@ -55,4 +56,4 @@ handleOnSubmit = (event) => {
 
 
 
-export default Userinfor;
+export default AddUserinfor;
