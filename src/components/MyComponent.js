@@ -1,4 +1,5 @@
 import React from "react";
+import Userinfor from "./Userinfor";
 
 class MyComponent extends React.Component{
 
@@ -9,24 +10,18 @@ class MyComponent extends React.Component{
         age: 23
     };
 
-handleClick(event){
-console.log("Click me my button");
-
-this.setState({
-    name: 'Hoang' ,
-    age: Math.floor(Math.random()* 100+1)
-})
 
 
-}
-
-handleOnMouseOver(event){
-// console.log(event.pageX)
-}
 
 handleOnChangeInput = (event) => {
     this.setState({
         name: event.target.value
+    })
+}
+
+handleOnChangeAge = (event) => {
+    this.setState({
+        age: event.target.value
     })
 }
 handleOnSubmit = (event) => {
@@ -38,15 +33,9 @@ handleOnSubmit = (event) => {
     render(){
     return(
         <div>
-            My name is {this.state.name } anh i'm  {this.state.age}
-            <form action="" onSubmit={(event) => this.handleOnSubmit(event)}> 
-                <input type="text" 
-                onChange={(event) => {this.handleOnChangeInput(event)}}
-                />
-                <button>
-                    Submit
-                </button>
-            </form>
+ 
+            <Userinfor></Userinfor>
+
 
              </div>
     );
