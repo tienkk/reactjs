@@ -1,5 +1,6 @@
 import React from "react";
 import Userinfor from "./Userinfor";
+import DisplayInfor from "./DisplayInfor";
 
 class MyComponent extends React.Component{
 
@@ -35,6 +36,10 @@ handleOnSubmit = (event) => {
         <div>
  
             <Userinfor></Userinfor>
+            <br /> <br />
+            <DisplayInfor name= "Hoang" age ="25" ></DisplayInfor>
+            <hr />
+            <DisplayInfor name= "hung" age ="23" ></DisplayInfor>
 
 
              </div>
